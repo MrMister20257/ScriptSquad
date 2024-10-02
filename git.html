@@ -45,11 +45,11 @@
     </nav>
     <main>
         <div class="articleBackground">
-            <h4><strong>Cheat Sheet Node Package Manager (NPM)</strong></h4><br>
-            <p>Hier findet ihr alle relevanten Befehle für NPM, die euch dabei helfen npm packages zu installieren und zu verwalten.</u></p>
+            <h4><strong>Cheat Sheet Git</strong></h4><br>
+            <p>Hier findet ihr alle relevanten Befehle für Git, die euch dabei helfen Git flüssiger zu verwenden.</u></p>
             <br>
             <br>
-            <h6><strong>Package management</strong></h6>
+            <h6><strong>Setup</strong></h6>
             <br>
             <table>
                 <tr class="tableTitle">
@@ -57,21 +57,21 @@
                     <th>Effekt</th>
                 </tr>
                 <tr class="row1">
-                    <td>npm i</td>
-                    <td>Alias for npm install</td>
+                    <td>git config --global user.name “[firstname lastname]”</td>
+                    <td>set a name that is identifiable for credit when review version history</td>
                 </tr>
                 <tr class="row2">
-                    <td>npm install</td>
-                    <td>Install everything in package.json</td>
+                    <td>git config --global user.email “[valid-email]”</td>
+                    <td>set an email address that will be associated with each history marker</td>
                 </tr>
                 <tr class="row1">
-                    <td>npm install --production</td>
-                    <td>Install everything in package.json, except devDependecies</td>
+                    <td>git config --global color.ui auto</td>
+                    <td>set automatic command line coloring for Git for easy reviewing</td>
                 </tr>
             </table> 
             <br>
             <br>
-            <h6><strong>Adding packages</strong></h6>
+            <h6><strong>Setup & Init</strong></h6>
             <br>
             <table>
                 <tr class="tableTitle">
@@ -79,21 +79,17 @@
                     <th>Effekt</th>
                 </tr>
                 <tr class="row1">
-                    <td>npm install lodash</td>
-                    <td>Install a package</td>
+                    <td>git init</td>
+                    <td>initialize an existing directory as a Git repository</td>
                 </tr>
                 <tr class="row2">
-                    <td>npm install --save-dev lodash</td>
-                    <td>Install as devDependency</td>
-                </tr>
-                <tr class="row1">
-                    <td>npm install --save-exact lodash</td>
-                    <td>Install with exact</td>
+                    <td>git clone [url]</td>
+                    <td>retrieve an entire repository from a hosted location via URL</td>
                 </tr>
             </table>
             <br>
             <br>
-            <h6><strong>Listing</strong></h6>
+            <h6><strong>Stage & Snapshot</strong></h6>
             <br>
             <table>
                 <tr class="tableTitle">
@@ -101,25 +97,33 @@
                     <th>Effekt</th>
                 </tr>
                 <tr class="row1">
-                    <td>npm list</td>
-                    <td>Lists the installed versions of all dependencies in this software</td>
+                    <td>git status</td>
+                    <td>show modified files in working directory, staged for your next commit</td>
                 </tr>
                 <tr class="row2">
-                    <td>npm list -g --depth 0</td>
-                    <td>Lists the installed versions of all globally installed packages</td>
+                    <td>git add [file]</td>
+                    <td>add a file as it looks now to your next commit (stage)</td>
                 </tr>
                 <tr class="row1">
-                    <td>npm view</td>
-                    <td>Lists the latest versions of all dependencies in this software</td>
+                    <td>git reset [file]</td>
+                    <td>unstage a file while retaining the changes in working directory</td>
                 </tr>
                 <tr class="row2">
-                    <td>npm outdated</td>
-                    <td>Lists only the dependencies in this software which are outdated</td>
+                    <td>git diff</td>
+                    <td>diff of what is changed but not staged</td>
+                </tr>
+                <tr class="row1">
+                    <td>git diff --staged</td>
+                    <td>diff of what is staged but not yet commited</td>
+                </tr>
+                <tr class="row2">
+                    <td>git commit -m “[descriptive message]”</td>
+                    <td>commit your staged content as a new commit snapshot</td>
                 </tr>
             </table>
             <br>
             <br>
-            <h6><strong>Updating</strong></h6>
+            <h6><strong>Branch & Merge</strong></h6>
             <br>
             <table>
                 <tr class="tableTitle">
@@ -127,25 +131,29 @@
                     <th>Effekt</th>
                 </tr>
                 <tr class="row1">
-                    <td>npm update</td>
-                    <td>Update production packages</td>
+                    <td>git branch</td>
+                    <td>list your branches. a * will appear next to the currently active branch</td>
                 </tr>
                 <tr class="row2">
-                    <td>npm update --dev</td>
-                    <td>Update dev packages</td>
+                    <td>git checkout -b [branch name]</td>
+                    <td>create a new branch and switch to it</td>
                 </tr>
                 <tr class="row1">
-                    <td>npm update -g</td>
-                    <td>Update global packages</td>
+                    <td>git checkout</td>
+                    <td>switch to another branch and check it out into your working directory</td>
                 </tr>
                 <tr class="row2">
-                    <td>npm update lodash</td>
-                    <td>Update a package</td>
+                    <td>git merge [branch]</td>
+                    <td>merge the specified branchs history into the current one</td>
+                </tr>
+                <tr class="row1">
+                    <td>git log</td>
+                    <td>show all commits in the current branch’s history</td>
                 </tr>
             </table>
             <br>
             <br>
-            <h6><strong>Removing</strong></h6>
+            <h6><strong>Share & Update</strong></h6>
             <br>
             <table>
                 <tr class="tableTitle">
@@ -153,8 +161,24 @@
                     <th>Effekt</th>
                 </tr>
                 <tr class="row1">
-                    <td>npm rm lodash</td>
-                    <td>Remove package production packages</td>
+                    <td>git remote add [alias] [url]</td>
+                    <td>add a git URL as an alias</td>
+                </tr>
+                <tr class="row2">
+                    <td>git fetch [alias]</td>
+                    <td>fetch down all the branches from that Git remote</td>
+                </tr>
+                <tr class="row1">
+                    <td>git merge [alias]/[branch]</td>
+                    <td>merge a remote branch into your current branch to bring it up to date</td>
+                </tr>
+                <tr class="row2">
+                    <td>git push [alias] [branch]</td>
+                    <td>Transmit local branch commits to the remote repository branch</td>
+                </tr>
+                <tr class="row1">
+                    <td>git pull</td>
+                    <td>fetch and merge any commits from the tracking remote branch</td>
                 </tr>
             </table>
             <br>
