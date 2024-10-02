@@ -1,15 +1,22 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
 body{
   background-image: url('https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif?cid=ecf05e471qmolo901fddox461x1xer76oweigwgb95wknqgw&ep=v1_gifs_search&rid=giphy.gif&ct=g');
   background-size: 100% auto;
-  height: 100vh;
-  padding:0;
-  margin:0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: scroll;
 }
 
 .topnav {
@@ -49,10 +56,35 @@ body{
   }
 
 main {
+    flex: 1;
     padding: 1rem;
     text-align: center;
     color: #BEE4E6;
-    display: block;
+}
+
+table {
+  width: 100%;
+  color: #BEE4E6;
+  border: solid #306366;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.tableTitle {
+  background-color: #2f6265;
+}
+
+.row1 {
+  background-color: #303030;
+}
+
+.row2 {
+  background-color: #444444;
+}
+
+td {
+  width: 50%;
+  text-align: left;
+  padding: 10px;
 }
 
 .articleBackground {
@@ -68,7 +100,15 @@ ul {
   list-style-type: none;
 }
 
+li {
+  display: inline;
+}
+
 h4 {
+  display: inline-block;
+}
+
+h6 {
   display: inline-block;
 }
 
@@ -76,12 +116,9 @@ p {
   display: inline;
 }
 
-h6 {
-  display: inline-block;
-}
-
-li {
-  display: inline;
+#listItem {
+  display: block;
+  text-align: left;
 }
 
 #fixed-button {
@@ -92,7 +129,7 @@ li {
   color: #BEE4E6 !important;
   transition: 0.3s !important;
   border: none;
-  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 10px 0px #00000080;
 }
 
 #fixed-button:hover {
@@ -100,13 +137,13 @@ li {
   color: #306366 !important;
 }
 
-footer { 
-    background-color: #306366;
-    color: #BEE4E6;
-    padding-top: 1rem;
-    text-align: center;
-    position: fixed; bottom: 0; right: 0; left: 0;
-    box-shadow: 2px -2px 10px 0px rgba(0, 0, 0, 0.5);
+footer {
+  background-color: #306366;
+  color: #BEE4E6;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 2px -2px 10px 0px #00000080;
+  width: 100%;
 }
     
     @media screen and (max-width: 650px) {
