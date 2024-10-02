@@ -29,8 +29,8 @@ body{
     background-color: #306366;
     overflow: hidden;
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
-    animation-name: pulse;
-    animation-duration: 10s;
+    animation-name: pulseNav;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
   }
 
@@ -204,6 +204,23 @@ footer {
 
 /*Keyframes*/
 
+      @keyframes pulseNav {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 10px 1px #BEE4E6;
+        }
+      
+        50% {
+          transform: scale(1);
+          box-shadow: 0 0 10px 5px #BEE4E6;
+        }
+      
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 10px 1px #BEE4E6;
+        }
+      }
+      
       @keyframes pulse {
         0% {
           transform: scale(1);
@@ -220,7 +237,7 @@ footer {
           box-shadow: 0 0 10px 1px #306366;
         }
       }
-      
+
       @keyframes pulseText {
         0% {
           text-shadow: 0px 0px 2px #306366;
