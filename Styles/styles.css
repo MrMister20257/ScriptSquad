@@ -19,10 +19,19 @@ body{
   overflow: scroll;
 }
 
+#navLogo {
+  max-height: 1.6rem;
+  padding-right: 4px;
+  width: auto;
+}
+
 .topnav {
     background-color: #306366;
     overflow: hidden;
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+    animation-name: pulse;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
   }
 
 .topnav a {
@@ -93,6 +102,16 @@ td {
   padding: 20px;
   border-radius: 50px;
   display: inline-block;
+  transition: 0.3s;
+}
+
+.articleBackground:hover {
+  background-color: rgb(84, 137, 139);
+  box-shadow: 2px 2px 10px 1px #306366;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+
 }
 
 ul {
@@ -121,21 +140,31 @@ p {
   text-align: left;
 }
 
-#fixed-button {
+#rocket {
   position: fixed;
-  bottom: 70px;
-  right: 5px;
-  background-color: #306366 !important;
-  color: #BEE4E6 !important;
-  transition: 0.3s !important;
-  border: none;
-  box-shadow: 2px 2px 10px 0px #00000080;
+  bottom: 20px;
+  right: 25px;
+  width: 50px;
   transition: 0.3s;
+  border: none;
+  transition: 0.3s;
+  opacity: 0.9;
 }
 
-#fixed-button:hover {
-  background-color: #BEE4E6 !important;
-  color: #306366 !important;
+#rocket:hover {
+ cursor: pointer;
+}
+
+#rocket:active {
+  animation-name: beamMeUp;
+  animation-duration: 0.1s;
+  animation-iteration-count: 1;
+}
+
+#footerP {
+  animation-name: pulseText;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 footer {
@@ -171,4 +200,84 @@ footer {
           text-align: left;
         }
       }
+
+
+/*Keyframes*/
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 10px 1px #306366;
+        }
       
+        10% {
+          transform: scale(1);
+          box-shadow: 0 0 10px 5px #BEE4E6;
+        }
+      
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 10px 1px #306366;
+        }
+      }
+      
+      @keyframes pulseText {
+        0% {
+          text-shadow: 0px 0px 2px #306366;
+        }
+      
+        10% {
+          text-shadow: 2px 0px 2px #BEE4E6;
+        }
+
+        20% {
+          text-shadow: -2px 0px 2px #BEE4E6;
+        }
+      
+        30% {
+          text-shadow: 2px 0px 2px #BEE4E6;
+        }
+      
+        40% {
+          text-shadow: -2px 0px 2px #BEE4E6;
+        }
+
+        50% {
+          text-shadow: 4px 0px 2px #BEE4E6;
+        }
+
+        60% {
+          text-shadow: -4px 0px 2px #BEE4E6;
+        }
+
+        70% {
+          text-shadow: 4px 0px 2px #BEE4E6;
+        }
+
+        80% {
+          text-shadow: -4px 0px 2px #BEE4E6;
+        }
+
+        90% {
+          text-shadow: 2px 0px 2px #BEE4E6;
+        }
+      
+        100% {
+          text-shadow: 0px 0px 2px #BEE4E6;
+        }
+      }
+
+      @keyframes beamMeUp {
+        0% {
+          transform: scale(1);
+        }
+      
+        50% {
+          transform: scale(1.2);
+        }
+      
+        100% {
+          transform: scale(1);
+        }
+      
+      }
