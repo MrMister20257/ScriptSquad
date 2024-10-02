@@ -146,7 +146,9 @@ footer {
   box-shadow: 2px -2px 10px 0px #00000080;
   width: 100%;
 }
-    
+
+/*Media Rules*/
+
     @media screen and (max-width: 650px) {
         .topnav a:not(:first-child) {display: none;}
         .topnav a.icon {
