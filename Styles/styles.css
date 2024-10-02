@@ -130,6 +130,7 @@ p {
   transition: 0.3s !important;
   border: none;
   box-shadow: 2px 2px 10px 0px #00000080;
+  transition: 0.3s;
 }
 
 #fixed-button:hover {
